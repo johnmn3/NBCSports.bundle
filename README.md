@@ -3,6 +3,8 @@ MSNBCLive.bundle
 
 Plex Channel plug-in for MSNBC Live
 
+*** First cut.. very alpha.
+
 TODO i.e. "Not Implemented":
 * LiveExtra streaming
 
