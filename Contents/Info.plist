@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
         <key>CFBundleIdentifier</key>
-        <string>com.plexapp.plugins.nbcsports</string>
+        <string>com.plexapp.plugins.msnbclive</string>
         <key>PlexPluginClass</key>
         <string>Content</string>
         <key>PlexAudioCodec</key>
