@@ -4,18 +4,18 @@
     <dict>
         <key>Search</key>
         <dict>
-            <key>NBCSports</key>
+            <key>MSNBCLive</key>
         <dict/>
     </dict>
         <key>URL</key>
         <dict>
-            <key>NBCSports</key>
+            <key>MSNBCLive</key>
             <dict>
                 <key>Identifier</key>
-                <string>com.plexapp.plugins.nbcsports</string>
+                <string>com.plexapp.plugins.msnbclive</string>
                 <key>URLPatterns</key>
                 <array>
-                    <string>http://([^.]+.)?nbcsports.com/.+</string>
+                    <string>http://www.hulkusa.com/watch-msnbc-live-streaming/</string>
                 </array>
             </dict>
     </dict>
