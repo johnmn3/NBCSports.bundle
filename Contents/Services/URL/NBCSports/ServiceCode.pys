@@ -1,4 +1,4 @@
-PLAYER_URL = "http://vplayer.nbcsports.com/p/BxmELC/nbcsportssite/select/"
+PLAYER_URL = "http://www.hulkusa.com/watch-msnbc-live-streaming/"
 THUMB_URL = "http://www.nbcsports.com/files/nbcsports/styles/video_thumbnail/public/media-theplatform/%s.jpg"
 SMIL_URL = "http://link.theplatform.com/s/BxmELC/%s"
 SMIL_NAMESPACE = {'a': 'http://www.w3.org/2005/SMIL21/Language'}
@@ -9,7 +9,7 @@ def MetadataObjectForURL(url):
 
     Log.Debug('MetadataObjectForURL('+url+')')
 
-    if url.startswith("http://www.nbcsports.com"):
+    if url.startswith("http://www.hulkusa.com"):
 
         video_hash = GetVideoHash(url)
         video_details = GetVideoDetails(video_hash)
@@ -28,7 +28,7 @@ def MediaObjectsForURL(url):
 
     Log.Debug('MediaObjectsForURL('+url+')')
 
-    if url.startswith("http://www.nbcsports.com"):
+    if url.startswith("http://www.hulkusa.com"):
 
         return [
                 MediaObject(
