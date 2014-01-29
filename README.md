@@ -1,7 +1,7 @@
-NBCSports.bundle
+MSNBCLive.bundle
 ================
 
-Plex Channel plug-in for NBCSports.com
+Plex Channel plug-in for MSNBC Live
 
 TODO i.e. "Not Implemented":
 * LiveExtra streaming
