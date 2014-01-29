@@ -1,13 +1,13 @@
 DEBUG = False
-VIDEOS_URL = "http://www.nbcsports.com/ajax-pane/get-pane/3373/61644?/video"
-ALL_URL = "http://www.nbcsports.com/search/site/video%%3A?f[0]=bundle%%3Avideo_content_type&page=%s"
+VIDEOS_URL = "http://www.hulkusa.com/watch-msnbc-live-streaming/"
+ALL_URL = "http://www.hulkusa.com/watch-msnbc-live-streaming/"
 
 NAME = L('Title')
 ART = 'art-default.jpg'
 ICON = 'icon-default.png'
-PREFIX = '/video/nbcsports'
+PREFIX = '/video/msnbclive'
 
-SHOWS = ['Dan Patrick Show', 'ProFootballTalk', 'SportsDash']
+SHOWS = ['MSNBCLive']
 
 ####################################################################################################
 def Start():
@@ -64,7 +64,7 @@ def MainMenu():
         oc.add(DirectoryObject(key=Callback(ListShow, show=show), title=L(show), thumb=thumb))
 
     oc.add(DirectoryObject(key=Callback(AllVideos), title=L('All Videos'), thumb=R('icon-dark.jpg')))
-    oc.add(SearchDirectoryObject(identifier="com.plexapp.plugins.nbcsports", title=L("Search NBCSports.com Videos"), prompt=L("Search for Videos")))
+    oc.add(SearchDirectoryObject(identifier="com.plexapp.plugins.msnbclive", title=L("Search MSNBC Live"), prompt=L("Search for Videos")))
 
     return oc
 
@@ -88,7 +88,7 @@ def ListVideos(id, name):
         return ObjectContainer(header=name, message="D'oh! Me Fail Videos? Unpossible!.")
 
     for index in range(num_thumbs):
-        url = 'http://www.nbcsports.com' + links[index].get('href')
+        url = 'http://www.hulkusa.com' + links[index].get('href')
         title = CleanName(links[index].text)
         thumb = thumbs[index]
 
@@ -103,8 +103,8 @@ def ListShow(show):
 
     log("ListShow("+show+")")
 
-    if show == 'ProFootballTalk':
-        search = 'ProFootballTalk'
+    if show == 'MSNBCLive':
+        search = 'MSNBCLive'
     elif show == 'Dan Patrick Show':
         search = 'DPS:'
     elif show == 'SportsDash':
@@ -121,7 +121,7 @@ def ListShow(show):
         log("Found %d link" % len(link))
         if len(link) == 1:
             title = link[0].text
-            url = 'http://www.nbcsports.com' + link[0].get('href')
+            url = 'http://www.hulkusa.com' + link[0].get('href')
             thumb = row.xpath('.//img/@src')[0]
 
             oc.add(VideoClipObject(url=url, title=title, thumb=thumb))
@@ -147,7 +147,7 @@ def AllVideos(page=0):
         oc.add(NextPageObject(key=Callback(AllVideos, page=page+1), title="More Videos..."))
 
     if len(oc) < 1:
-        Log ('nbcsports.com search query returned no results')
+        Log ('MSNBCLive search query returned no results')
         return ObjectContainer(header="Empty", message="There are no videos results to list right now.")
     else:
         return oc
